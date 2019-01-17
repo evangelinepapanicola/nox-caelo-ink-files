@@ -4,7 +4,7 @@ INCLUDE epilogue.ink
 
 //global game variables
 
-VAR players_name = "Default"
-VAR questsCompleted = 0
+VAR players_name = "Nox"
+VAR questsItems = 0
 VAR money = 0
 VAR weaponEquipped = ""
