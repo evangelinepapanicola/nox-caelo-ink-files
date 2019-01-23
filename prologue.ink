@@ -15,15 +15,15 @@ You hear Cerberus barking in the hallway. You go to investigate.
 
 === investigate ===
 
-Out in the hallway, your dog Cerberus is sat innocently by the door, looking at you expectantly.
-You check your watch, and realise it's time for your daily night-time walk in the forest!
+{!Out in the hallway, your dog Cerberus is sat innocently by the door, looking at you expectantly.}
+{!You check your watch, and realise it's time for your daily night-time walk in the forest!}
 
 * [Head out for walk with Cerberus]
 -> walk
 
 * [Pet Cerberus]
 Cerberus seems happy.
--> walk
+-> investigate
 
 
 === call_cerberus ===
@@ -92,6 +92,7 @@ You follow the footprints on the ground.
 -> the_footprints
 
 = the_voice
+
 "IS SOMEBODY THERE??"
 
 The voice continues. It gets louder as you approach it.
@@ -104,10 +105,34 @@ The voice continues. It gets louder as you approach it.
 "PLEASE HELP ME!" The person yells back, with urgency. Sensing that this person may be in danger, you:
 
 * [Pick up the pace]
+You and Cerberus start running forward down the path frantically, until you finally see a figure in the distance.
 
-* [Look for clues]
+* [Hesitantly power walk]
+Wanting to help, but being unsure of the dangers ahead, you walk a bit faster. You start to see a figure in the distance.
 
--> END
+- ->meet_parvus
 
 = the_footprints
+
+"IS SOMEBODY THERE??"
+
+The voice continues.
+
+The trail of footprints in the mud go on for quite some time, to the point where you wonder if they actually lead anywhere.
+
+* [Keep your eyes on the footprints]
+You focus on following the footprints to find the person as quickly as possible. As you do so, you notice the footprints change briefly. It's almost like two, three or four sets of footprints in the same path you've been following belong to someone - or something completely different. Up until now, the footprints had been seemingly normal, human footprints from what looks like a pair of boots; but this unusual set of footprints that differ to the others look completely different - like they come from some sort of barefoot, pointy toed animal.
+
+But It's late - you're probably just tired and seeing things.
+
+On that note - as you keep walking, you see a figure in the distance.
+
+* [Look up at the stars]
+You look up at the full moon and admire It's beauty... as you try not to walk into a tree.
+Continuing to follow the footprints, you eventually notice a figure in the distance.
+
+- ->meet_parvus
+
+= meet_parvus
+
 -> END
