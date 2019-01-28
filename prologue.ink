@@ -1,5 +1,3 @@
-//prologue goes here
-
 It's a quiet, uneventful night at home, as usual.
 You are {players_name} - and right now, you're watching TV after a long day of chores.
 
@@ -32,11 +30,11 @@ Your dog, Cerberus wanders into the room and sits down, looking at you expectant
 
 * [Pet Cerberus]
 Cerberus seems happy.
-You check your watch, and realise it's time for your daily night-time walk in the forest!
+You check your watch, and realise it's time for your daily night-time walk in the forest! You head on out.
 -> walk
 
 * [Follow]
-You follow Cerberus out into the hallway. The realisation hits, and sure enough you check your watch - it's time for your daily night-time walk in the forest!
+You follow Cerberus out into the hallway. The realisation hits, and sure enough you check your watch - it's time for your daily night-time walk in the forest! You head on out.
 -> walk
 
 === walk ===
@@ -134,5 +132,17 @@ Continuing to follow the footprints, you eventually notice a figure in the dista
 - ->meet_parvus
 
 = meet_parvus
+
+As you get closer, you identify this figure as a small boy wearing what looks like... a suit of armour? He immediately notices you and starts waving his arms wildly, signalling for you to come over. "Finally! Someone found me!" He yells.
+
+You figure this poor kid probably got lost doing live action roleplay with his friends. As you approach him, you're bound to have some questions:
+
+* [How did you end up here?] You ask the boy how on earth he ended up here.
+"I fled here from my kingdom! Please, you must help, the people are in imminent danger!"
+    * * [Your... uh... kingdom?]
+    * * [Who is in danger exactly?]
+    - - "I hail from the kingdom of Luna. I fled here, to your realm, seeking help. If we don't go back soon, I fear my people will be in grave danger. Scarlet... she will destroy them."
+    * * [Join in on the kid's roleplay]
+* [What's your name?]
 
 -> END
