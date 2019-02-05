@@ -137,7 +137,7 @@ Continuing to follow the footprints, you eventually notice a figure in the dista
 
 {!You figure this poor guy probably got lost doing live action roleplay with his friends. As you approach him, you're bound to have some questions:}
 
-* [How did you end up here?] You ask the man how on earth he ended up here.
+* [How did you end up here?] You ask {parvus_name: Parvus|the man} how on earth he ended up here.
 "I fled here from my kingdom! Please, you must help, the people are in imminent danger!"
     * * [Your... uh... kingdom?]
     * * [Who is in danger exactly?]
@@ -163,8 +163,8 @@ Continuing to follow the footprints, you eventually notice a figure in the dista
 Parvus holds his hand out to you. 
 "Please, come with me."
 
-* Take his hand
+* [Take his hand]
 You take Parvus' hand, and he yanks you forward - but, instead of tripping and falling face-first into the ground, you just keep falling, falling, falling...
-* Refuse
+* [Refuse]
 Feeling distrust, you keep your arms firmly by your sides. Before you can explain that you don't want to go with him, he grabs your arm and yanks you forward - but, instead of tripping and falling face-first into the ground, you just keep falling, falling, falling...
 - -> welcome_to_luna
