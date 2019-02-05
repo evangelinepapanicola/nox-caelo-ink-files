@@ -133,16 +133,38 @@ Continuing to follow the footprints, you eventually notice a figure in the dista
 
 = meet_parvus
 
-As you get closer, you identify this figure as a small boy wearing what looks like... a suit of armour? He immediately notices you and starts waving his arms wildly, signalling for you to come over. "Finally! Someone found me!" He yells.
+{!As you get closer, you identify this figure as a small man wearing what looks like... a suit of armour? He immediately notices you and starts waving his arms wildly, signalling for you to come over. "Finally! Someone found me!" He yells.}
 
-You figure this poor kid probably got lost doing live action roleplay with his friends. As you approach him, you're bound to have some questions:
+{!You figure this poor guy probably got lost doing live action roleplay with his friends. As you approach him, you're bound to have some questions:}
 
-* [How did you end up here?] You ask the boy how on earth he ended up here.
+* [How did you end up here?] You ask the man how on earth he ended up here.
 "I fled here from my kingdom! Please, you must help, the people are in imminent danger!"
     * * [Your... uh... kingdom?]
     * * [Who is in danger exactly?]
     - - "I hail from the kingdom of Luna. I fled here, to your realm, seeking help. If we don't go back soon, I fear my people will be in grave danger. Scarlet... she will destroy them."
-    * * [Join in on the kid's roleplay]
-* [What's your name?]
+    * * [Tell {parvus_name: Parvus|the guy} that you didn't realise he was just doing some LARP]
+        You try and explain to {parvus_name: Parvus|the guy} that you didn't realise he was just pretending to be in danger, you thought he was seriously in trouble.
+        "LARP? I'm not pretending, I'm serious! You have to help me."
+        * * * Alright, alright. How do I help you exactly?
+            "You have to come with me - back to Luna. I need you to retrieve the legendary tomes, only then can we take down Scarlet and bring justice to the people."
+            ->meet_parvus
+        * * * You're delusional.
+            You notice {parvus_name: Parvus|the man} start to tear up at your comment.
+            "Please... I'm begging you. You're my only hope. Without your help, my people, they'll-"
+            ->meet_parvus
+        
+* (parvus_name)[What's your name?]
+"Sorry for not introducing myself. I am... Parvus." He bows in front of you as he says this.
+->meet_parvus
+* -> to_luna
 
--> END
+= to_luna
+
+Parvus holds his hand out to you. 
+"Please, come with me."
+
+* Take his hand
+You take Parvus' hand, and he yanks you forward - but, instead of tripping and falling face-first into the ground, you just keep falling, falling, falling...
+* Refuse
+Feeling distrust, you keep your arms firmly by your sides. Before you can explain that you don't want to go with him, he grabs your arm and yanks you forward - but, instead of tripping and falling face-first into the ground, you just keep falling, falling, falling...
+- -> welcome_to_luna
