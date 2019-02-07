@@ -145,10 +145,10 @@ Continuing to follow the footprints, you eventually notice a figure in the dista
     * * [Tell {parvus_name: Parvus|the guy} that you didn't realise he was just doing some LARP]
         You try and explain to {parvus_name: Parvus|the guy} that you didn't realise he was just pretending to be in danger, you thought he was seriously in trouble.
         "LARP? I'm not pretending, I'm serious! You have to help me."
-        * * * Alright, alright. How do I help you exactly?
+        * * * [Alright, alright. How do I help you exactly?]
             "You have to come with me - back to Luna. I need you to retrieve the legendary tomes, only then can we take down Scarlet and bring justice to the people."
             ->meet_parvus
-        * * * You're delusional.
+        * * * [You're delusional.]
             You notice {parvus_name: Parvus|the man} start to tear up at your comment.
             "Please... I'm begging you. You're my only hope. Without your help, my people, they'll-"
             ->meet_parvus
