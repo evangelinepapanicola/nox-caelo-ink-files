@@ -54,7 +54,7 @@ You find yourself in the town square. People are roaming about, coming in and ou
 -> crescent_street
 
 + [Enter the alleyway]
--> _alley
+{not get_weapon: ->old_man_intro|->_alley}
 
 
 = crescent_street
@@ -73,7 +73,7 @@ You decide to take a look down Crescent street. This seems to be where all the m
 
 {!A jolly lady greets you as you enter. "Welcome love! Take a look at the wares I've got for sale."}
 
-    + [Ask about weapons]
+    + {not get_weapon}[Ask about weapons]
         You ask her if she has any weapons for sale.
         "Weapons? Ho ho - not here my love. Ye might want to keep quiet about that sort of thing 'round here. But if ye really want something along those lines...", she leans in close to you, and whispers: 
         "Ye didn't here it from me, but the older fellow in the alleyway by the town square can get you what you need. Ye just need the code!"
@@ -84,9 +84,9 @@ You decide to take a look down Crescent street. This seems to be where all the m
     
     + {not coolSunglasses} [Look at the Cool Sunglasses]
         "An eye for taste I see!" The lady pipes up. "These sunglasses will have ye looking powerful. I doubt anyone'll mess with ye while wearing these! Would you like to buy 'em? They're a steal at £1"
-        {not gotWeapon: You realise you probably shouldn't waste money on sunglasses right now.}
+        {not get_weapon: You realise you probably shouldn't waste money on sunglasses right now.}
         
-        + + {gotWeapon}[Yes please!]
+        + + {get_weapon}[Yes please!]
             "A wise purchase!"
             You put on the Cool Sunglasses. You've never looked so badass!
             ~money--
@@ -99,9 +99,9 @@ You decide to take a look down Crescent street. This seems to be where all the m
     
     + {not apple} [Look at the Apples]
         "Ah yes! These apples are so tasty they've been selling out fast. We only have one left! Buy it for just £1."
-        {not gotWeapon: You realise you probably shouldn't waste money on apples right now, even if you are peckish.}
+        {not get_weapon: You realise you probably shouldn't waste money on apples right now, even if you are peckish.}
         
-        + + {gotWeapon}[Yes please!]
+        + + {get_weapon}[Yes please!]
             "A wise purchase!"
             You buy the apple, putting it in your backpack for later.
             ~money--
@@ -117,26 +117,48 @@ You decide to take a look down Crescent street. This seems to be where all the m
     -> crescent_street
 
 
-= _alley
+= old_man_intro
 
 You enter the dark, pungent-smelling back alley of the town. You're not entirely sure if it's safe here. A tall, old-looking man in a long coat is stood leaning against the wall in a shifty manner. His eyes are fixed on you as you enter the alleyway.
 
 + [Make conversation]
     {weaponCode:"I have a message from Sebille" You tell the old man. ->get_weapon|You ask the shifty old man what brings him here.}
     "Listen, kiddo. I don't know who you are or what your business is - but I suggest you get outta here", the old man says, threateningly.
-    
-    //conditional content tbc - weapon sale opens if spoken to shopkeep
-    -> _alley
+    -> old_man_intro
 
 + [Go back to the town square]
 -> town_square
 
 = get_weapon
 
-"How- who are you?" the man says, startled by your statement.
+{!"How- who are you?" the man says, startled by your statement.}
  * [I need a weapon.]
+ "You've come to the right place. Just be warned, I'm only gonna let you buy one, and this is the only time I'm gonna show you them, so if you back out, you're not getting a weapon at all. It'll cost ya £2 to get one."
+ 
+ {money < 2: You reach into your pockets and realise you haven't got enough money. "Come back when you can afford it!" the man says. You skulk back out of the alleyway. -> town_square}
+ 
+    * * [Choose the sword]
+        "Alright, the sword it is. Be careful, It's heavy."
+        The old man hands you the sword. He's right, it is heavy - but you feel confident in wielding it. It has a nice decorative handle, and the words "Night Cleaver" are engraved on the hilt.
+        
+        You hand over £2, and thank the man.
+        
+        ~money = money - 2
+        ~weaponEquipped = "sword"
+        
+        -> get_weapon
+        
+    * * [Choose the bow]
+    * * [Decide you don't need one]
+ 
  * [I'm {players_name}.]
- Well, {players_name}, I definitely haven't seen you 'round here before. I take it the shopkeep on Crescent street told you about me. Either way, if It's a weapon you're after, I've got you covered.
+ "Well, {players_name}, I definitely haven't seen you 'round here before. I take it the shopkeep on Crescent street told you about me."
+ -> get_weapon
+ 
+ * {weaponEquipped != ""} [Who is Sebille?]
+ 
+= _alley
+->END
 
 = _paperboy
 ->END

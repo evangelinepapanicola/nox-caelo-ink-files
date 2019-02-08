@@ -10,4 +10,3 @@ VAR money = 0
 VAR weaponEquipped = ""
 VAR apple = false
 VAR coolSunglasses = false
-VAR gotWeapon = false //delete later
