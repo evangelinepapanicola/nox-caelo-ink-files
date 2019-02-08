@@ -56,19 +56,91 @@ You find yourself in the town square. People are roaming about, coming in and ou
 + [Enter the alleyway]
 -> _alley
 
+
 = crescent_street
-->END
+
+You decide to take a look down Crescent street. This seems to be where all the main shops are.
+
++ [Enter the General Store]
+    -> general_store
+
++ [Enter the Library]
+
++ [Go back to the town square]
+    ->town_square
+    
+= general_store
+
+{!A jolly lady greets you as you enter. "Welcome love! Take a look at the wares I've got for sale."}
+
+    + [Ask about weapons]
+        You ask her if she has any weapons for sale.
+        "Weapons? Ho ho - not here my love. Ye might want to keep quiet about that sort of thing 'round here. But if ye really want something along those lines...", she leans in close to you, and whispers: 
+        "Ye didn't here it from me, but the older fellow in the alleyway by the town square can get you what you need. Ye just need the code!"
+        + + (weaponCode)[The code?]
+        "Why yes - ye must say to him 'I have a message from Sebille'".
+        You thank the lady for her guidance.
+        -> general_store
+    
+    + {not coolSunglasses} [Look at the Cool Sunglasses]
+        "An eye for taste I see!" The lady pipes up. "These sunglasses will have ye looking powerful. I doubt anyone'll mess with ye while wearing these! Would you like to buy 'em? They're a steal at £1"
+        {not gotWeapon: You realise you probably shouldn't waste money on sunglasses right now.}
+        
+        + + {gotWeapon}[Yes please!]
+            "A wise purchase!"
+            You put on the Cool Sunglasses. You've never looked so badass!
+            ~money--
+            ~coolSunglasses = true 
+            ->general_store
+        
+        + + [No thank you.]
+            "Suit yerself."
+            -> general_store
+    
+    + {not apple} [Look at the Apples]
+        "Ah yes! These apples are so tasty they've been selling out fast. We only have one left! Buy it for just £1."
+        {not gotWeapon: You realise you probably shouldn't waste money on apples right now, even if you are peckish.}
+        
+        + + {gotWeapon}[Yes please!]
+            "A wise purchase!"
+            You buy the apple, putting it in your backpack for later.
+            ~money--
+            ~apple = true 
+            ->general_store
+        
+        + + [No thank you.]
+            "Suit yerself."
+            -> general_store
+    
+    + [Take your leave]
+    "Take care, love!" The lady waves at you on your way out.
+    -> crescent_street
+
 
 = _alley
+
 You enter the dark, pungent-smelling back alley of the town. You're not entirely sure if it's safe here. A tall, old-looking man in a long coat is stood leaning against the wall in a shifty manner. His eyes are fixed on you as you enter the alleyway.
+
++ [Make conversation]
+    {weaponCode:"I have a message from Sebille" You tell the old man. ->get_weapon|You ask the shifty old man what brings him here.}
+    "Listen, kiddo. I don't know who you are or what your business is - but I suggest you get outta here", the old man says, threateningly.
+    
+    //conditional content tbc - weapon sale opens if spoken to shopkeep
+    -> _alley
 
 + [Go back to the town square]
 -> town_square
 
-->END
+= get_weapon
+
+"How- who are you?" the man says, startled by your statement.
+ * [I need a weapon.]
+ * [I'm {players_name}.]
+ Well, {players_name}, I definitely haven't seen you 'round here before. I take it the shopkeep on Crescent street told you about me. Either way, if It's a weapon you're after, I've got you covered.
 
 = _paperboy
 ->END
+
 
 = _fountain
 
@@ -79,7 +151,7 @@ You scoop some coins out of the water, while several people give you dirty looks
 ~money = money+2
 -> _fountain
 
-+ [Throw a coin in]
++ {money > 5} [Throw a coin in]
 You make a wish, and throw in £1.
 ~money--
 -> _fountain
