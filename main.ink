@@ -54,7 +54,7 @@ You find yourself in the town square. People are roaming about, coming in and ou
 -> crescent_street
 
 + [Enter the alleyway]
-{not get_weapon: ->old_man_intro|->_alley}
+{weaponEquipped == "": ->old_man_intro|->_alley}
 
 
 = crescent_street
@@ -132,14 +132,14 @@ You enter the dark, pungent-smelling back alley of the town. You're not entirely
 = get_weapon
 
 {!"How- who are you?" the man says, startled by your statement.}
- * [I need a weapon.]
+ + {!weaponEquipped == ""} [I need a weapon.]
  "You've come to the right place. Just be warned, I'm only gonna let you buy one, and this is the only time I'm gonna show you them, so if you back out, you're not getting a weapon at all. It'll cost ya £2 to get one."
  
  {money < 2: You reach into your pockets and realise you haven't got enough money. "Come back when you can afford it!" the man says. You skulk back out of the alleyway. -> town_square}
  
     * * [Choose the sword]
         "Alright, the sword it is. Be careful, It's heavy."
-        The old man hands you the sword. He's right, it is heavy - but you feel confident in wielding it. It has a nice decorative handle, and the words "Night Cleaver" are engraved on the hilt.
+        The old man hands you the sword. He's right, it is heavy - but you feel confident in wielding it. It has a nice decorative handle, and the name "Dawnbreaker" is engraved on the hilt.
         
         You hand over £2, and thank the man.
         
@@ -149,19 +149,47 @@ You enter the dark, pungent-smelling back alley of the town. You're not entirely
         -> get_weapon
         
     * * [Choose the bow]
+        "Fancy yourself a ranger, huh? The bow it is. The quiver it comes with will mean you never run out of arrows."
+        You've always had a thing for archery, but this bow is like none you've ever seen before. It's very decorative, and looks like something you'd find in an art museum. You inspect the quiver it comes with, and find that every time you pull out an arrow, another one pops up in it's place, seemingly out of nowhere.
+        
+        You hand over £2, and thank the man.
+        
+        ~money = money - 2
+        ~weaponEquipped = "bow"
+        
+        -> get_weapon
+        
     * * [Decide you don't need one]
+        "Whaddya mean you don't need one? Changed your mind, eh?"
+        You're not sure what it is - maybe seeing the weapons made it all a bit too real, or perhaps neither of them are really your style. Either way, you decide not to buy one, leaving you with no weapon.
+        
+        ~weaponEquipped = "fists"
+        
+        -> get_weapon
  
  * [I'm {players_name}.]
  "Well, {players_name}, I definitely haven't seen you 'round here before. I take it the shopkeep on Crescent street told you about me."
  -> get_weapon
  
- * {weaponEquipped != ""} [Who is Sebille?]
+ * (whatHappenedSebille) {weaponEquipped != ""} [Who is Sebille?]
+ {!"Sebille... Sebille was my partner."}
+ 
+    * * [What happened?]
+        "Somebody killed her. Murder. Happened a long time ago. Never found out who did it."
+        * * * [Why do you sell weapons in secret?]
+                "Luna has a pretty strict 'no weapons' law. It's something I believe in, despite what I do. If the law was stricter, Sebille would probably still be alive right now. But I am a blacksmith, always have been, and I have an agreement with a certain person."
+        
+    
+    * * [I'm sorry for your loss.]
+    "Don't worry, I'm done grieving."
+    -> whatHappenedSebille
+ 
  
 = _alley
-->END
+->WIP
 
 = _paperboy
-->END
+->WIP
 
 
 = _fountain
@@ -183,8 +211,10 @@ You make a wish, and throw in £1.
 
 
 
-
-
+//WIP SECTION INDICATOR
+=== WIP ===
+Whoops! I haven't made this area yet. Please check back later. - DEV
+->END
 
 //TEMPORARY
 === met_scarlet ===
