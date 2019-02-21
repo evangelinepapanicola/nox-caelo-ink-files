@@ -65,6 +65,7 @@ You decide to take a look down Crescent street. This seems to be where all the m
     -> general_store
 
 + [Enter the Library]
+->WIP
 
 + [Go back to the town square]
     ->town_square
@@ -132,7 +133,7 @@ You enter the dark, pungent-smelling back alley of the town. You're not entirely
 = get_weapon
 
 {!"How- who are you?" the man says, startled by your statement.}
- + {!weaponEquipped == ""} [I need a weapon.]
+ + {weaponEquipped == ""} [I need a weapon.]
  "You've come to the right place. Just be warned, I'm only gonna let you buy one, and this is the only time I'm gonna show you them, so if you back out, you're not getting a weapon at all. It'll cost ya £2 to get one."
  
  {money < 2: You reach into your pockets and realise you haven't got enough money. "Come back when you can afford it!" the man says. You skulk back out of the alleyway. -> town_square}
@@ -177,12 +178,20 @@ You enter the dark, pungent-smelling back alley of the town. You're not entirely
     * * [What happened?]
         "Somebody killed her. Murder. Happened a long time ago. Never found out who did it."
         * * * [Why do you sell weapons in secret?]
-                "Luna has a pretty strict 'no weapons' law. It's something I believe in, despite what I do. If the law was stricter, Sebille would probably still be alive right now. But I am a blacksmith, always have been, and I have an agreement with a certain person."
+                "Luna has a pretty strict 'no weapons' law. It's something I believe in, despite what I do. If the law was stricter, Sebille would probably still be alive right now. But you gotta pay the bills somehow."
+                -> get_weapon
         
     
     * * [I'm sorry for your loss.]
     "Don't worry, I'm done grieving."
     -> whatHappenedSebille
+    
+* -> leave_alley
+
+= leave_alley
+
+You thank the old man for his help and leave the alleyway.
+-> town_square
  
  
 = _alley
