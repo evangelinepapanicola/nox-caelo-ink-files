@@ -198,7 +198,27 @@ You thank the old man for his help and leave the alleyway.
 ->WIP
 
 = _paperboy
-->WIP
+
+{&You notice a boy|The boy continues} yelling in the middle of the square, clutching a pile of newspapers. "MURDERS ON THE RISE! MURDERS ON THE RISE! IS ANYBODY SAFE? FIND OUT IN TODAY'S ISSUE OF THE DAILY LUNA!"
+
+* [Ask about the murders]
+You ask the boy about the murders he's yelling about.
+"There's been more and more weapon related murders lately! Rather perculiar given the no-weapons law. Nobody can figure out what's going on"
+    * * [I'll get to the bottom of it.]
+        "Good luck stranger! If you find out anything interesting, do a pal a favour and let me know." 
+        -> _paperboy
+    
+    * * [Are the guards here really that bad?]
+        The boy looks a little offended.
+        "No! Whoever's behind these crimes is just really good at cleaning up afterwards. They can never find any evidence. Besides, if you think they're so rubbish, you try solving a serial murder case!"
+        -> _paperboy
+
+* [Tell the boy to keep his voice down]
+The boy snarls, "I'm just doing my job, leave me be!"
+-> _paperboy
+
++ [Take your leave]
+->town_square
 
 
 = _fountain
