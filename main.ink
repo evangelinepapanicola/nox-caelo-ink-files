@@ -285,9 +285,56 @@ You make a wish, and throw in £1.
 
 
 = dungeons_info
+{!"Anyway, it looks like we're ready to get going!" Parvus says excitedly.}
+{!"So here's what you need to do. There are three legendary tomes that we can use to defeat Scarlet. The problem is, they're all hidden in 3 separate locations. I need you to go out there and retrieve them."}
+
+* [How do you know that Scarlet is bad?]
+
+Have you heard about the murders going on here?
+
+ * * {_paperboy} [Yeah, I have.]
+    "I know Scarlet is behind them. As soon as she decides she doesn't like someone, she hires people to do the deed. She is the only one powerful enough to conceal the evidence."
+    ->dungeons_info
+    
+ * * {not _paperboy} [The what?]
+ "There have been more murders around Luna than I can count, and they're becoming more and more frequent. I know Scarlet is behind them. As soon as she decides she doesn't like someone, she hires people to do the deed. She is the only one powerful enough to conceal the evidence."
+    ->dungeons_info
+
++ (three_locations)[What are the three locations?]
+    {!"Ignis Arena, Fox House and the Labyrinth of Fury."}
+    + + [Tell me about the Ignis Arena.]
+        "The Ignis Arena is where the Tome of Warfare is hidden. I would prepare for a fight if you're headed there."
+        * * * [Head to the Ignis Arena]
+                -> ignis_arena
+        + + + [Tell me about the other places]
+                ->three_locations
+                
+    + + [What's Fox House like?]
+    "Fox House is, despite the name, not a house full of cute fuzzy foxes." Parvus says, in a disapointed tone.
+    "Fox House is where you'll find Lady Emeralda, who is closely guarding the Tome of Charisma. It'll take a lot of convincing for her to hand it over."
+        * * * [Head to Fox House]
+                -> fox_house
+        + + + [Tell me about the other places]
+                ->three_locations
+    
+    + + [The Labyrinth of Fury, huh?]
+    "The Labyrinth of Fury is, well, a huge maze. At the heart of it is the Tome of Perserverance. You'll need plenty of patience for this one."
+        * * * [Head to the Labyrinth of Fury]
+                -> labyrinth_of_fury
+        + + + [Tell me about the other places]
+                ->three_locations
+    
+    
+    
+=== ignis_arena ===
+-> WIP
+
+
+=== fox_house ===
 ->WIP
 
-
+=== labyrinth_of_fury ===
+->WIP
 
 //WIP SECTION INDICATOR
 === WIP ===
