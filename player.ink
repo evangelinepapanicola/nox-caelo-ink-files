@@ -8,5 +8,6 @@ VAR players_name = "Nox"
 VAR questsItems = 0
 VAR money = 0
 VAR weaponEquipped = ""
+VAR visibleWeapon = false
 VAR apple = false
 VAR coolSunglasses = false

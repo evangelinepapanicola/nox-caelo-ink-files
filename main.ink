@@ -42,7 +42,7 @@ You stand up so Parvus can breathe, and put Cerberus back on the ground.
     
 === town_square === 
 
-You find yourself in the town square. People are roaming about, coming in and out of shops and chatting.
+You find yourself in the town square. {!People are roaming about, coming in and out of shops and chatting.}
 
 + [Investigate the fountain]
 -> _fountain
@@ -56,23 +56,66 @@ You find yourself in the town square. People are roaming about, coming in and ou
 + [Enter the alleyway]
 {weaponEquipped == "": ->old_man_intro|->_alley}
 
++ [Town gates]
+
+-> town_gates
+
+= town_gates
+
+You head back to the town gates, where Parvus is waiting for you.
+
+{visibleWeapon == true: "Aha! I see you got yourself a weapon. Well done. You still need some armour, though." ->town_gates_options|"Haven't you got yourself a weapon and some armour yet? Come on! Luna won't save itself."}
+
+<> {weaponEquipped == "fists": ->town_gates_options}
+
++ {weaponEquipped == ""} [Head back]
+    ->town_square
+    
+= town_gates_options
+
+* [I couldn't find any armour.]
+"Oh," Parvus sighs. "Luna is SO useless in the fashion department! Luckily I found this for you as backup." He hands you some folded up clothes. "There's some stalls just around the corner you can use to change."
+    * * [Change clothes]
+        You go and find the stalls Parvus was talking about and change into the "armour" he gave you. Weirdly, it's a perfect fit. You look like a brave warrior, a knight, or perhaps like you got lost on the way to Comic-Con.
+        
+        "There you go! You look perfect."
+        ->town_gates_options
+    
+* {visibleWeapon == true} [Isn't owning this weapon sort of... illegal?]
+"Well, uhh...", Parvus stumbles over his words. "Sort of. Regular townsfolk aren't really allowed weapons. But you're no ordinary townsfolk, and besides, this is for justice! Plus, you're sort of forgetting that this whole mission is against the law, really. Taking down Scarlet is uh, kinda treason."
+-> town_gates_options
+
+* {visibleWeapon == false} [I've decided I don't need a weapon.]
+"What on earth are you talking about? How on earth are you going to fight the enemies ahead of us?"
+    * * [*flexes* With these guns!]
+    * * [I can still fight with kicks and punches?]
+    - - "Alrighty then. I'll allow it."
+    ->town_gates_options
+
+* ->dungeons_info
 
 = crescent_street
 
-You decide to take a look down Crescent street. This seems to be where all the main shops are.
+{You decide to take a look down|You're on} Crescent street. This seems to be where all the main shops are.
 
 + [Enter the General Store]
     -> general_store
 
 + [Enter the Library]
-->WIP
+You try to enter the library, but the door is locked shut. There's no sign to indicate that it's closed, or anything...
+    + + [Go back]
+        -> crescent_street
 
 + [Go back to the town square]
     ->town_square
     
 = general_store
 
-{!A jolly lady greets you as you enter. "Welcome love! Take a look at the wares I've got for sale."}
+A jolly lady greets you as you enter. "Welcome love! Take a look at the wares I've got for sale."
+
+->general_store_options
+
+= general_store_options
 
     + {not get_weapon}[Ask about weapons]
         You ask her if she has any weapons for sale.
@@ -81,7 +124,7 @@ You decide to take a look down Crescent street. This seems to be where all the m
         + + (weaponCode)[The code?]
         "Why yes - ye must say to him 'I have a message from Sebille'".
         You thank the lady for her guidance.
-        -> general_store
+        -> general_store_options
     
     + {not coolSunglasses} [Look at the Cool Sunglasses]
         "An eye for taste I see!" The lady pipes up. "These sunglasses will have ye looking powerful. I doubt anyone'll mess with ye while wearing these! Would you like to buy 'em? They're a steal at £1"
@@ -92,11 +135,11 @@ You decide to take a look down Crescent street. This seems to be where all the m
             You put on the Cool Sunglasses. You've never looked so badass!
             ~money--
             ~coolSunglasses = true 
-            ->general_store
+            ->general_store_options
         
         + + [No thank you.]
             "Suit yerself."
-            -> general_store
+            -> general_store_options
     
     + {not apple} [Look at the Apples]
         "Ah yes! These apples are so tasty they've been selling out fast. We only have one left! Buy it for just £1."
@@ -107,11 +150,11 @@ You decide to take a look down Crescent street. This seems to be where all the m
             You buy the apple, putting it in your backpack for later.
             ~money--
             ~apple = true 
-            ->general_store
+            ->general_store_options
         
         + + [No thank you.]
             "Suit yerself."
-            -> general_store
+            -> general_store_options
     
     + [Take your leave]
     "Take care, love!" The lady waves at you on your way out.
@@ -120,7 +163,7 @@ You decide to take a look down Crescent street. This seems to be where all the m
 
 = old_man_intro
 
-You enter the dark, pungent-smelling back alley of the town. You're not entirely sure if it's safe here. A tall, old-looking man in a long coat is stood leaning against the wall in a shifty manner. His eyes are fixed on you as you enter the alleyway.
+{You enter the dark, pungent-smelling back alley of the town. You're not entirely sure if it's safe here. A tall, old-looking man in a long coat is stood leaning against the wall in a shifty manner. His eyes are fixed on you as you enter the alleyway.|The old man has his eyes fixed on you.}
 
 + [Make conversation]
     {weaponCode:"I have a message from Sebille" You tell the old man. ->get_weapon|You ask the shifty old man what brings him here.}
@@ -146,6 +189,7 @@ You enter the dark, pungent-smelling back alley of the town. You're not entirely
         
         ~money = money - 2
         ~weaponEquipped = "sword"
+        ~visibleWeapon = true
         
         -> get_weapon
         
@@ -157,6 +201,7 @@ You enter the dark, pungent-smelling back alley of the town. You're not entirely
         
         ~money = money - 2
         ~weaponEquipped = "bow"
+        ~visibleWeapon = true
         
         -> get_weapon
         
@@ -199,7 +244,7 @@ You thank the old man for his help and leave the alleyway.
 
 = _paperboy
 
-{&You notice a boy|The boy continues} yelling in the middle of the square, clutching a pile of newspapers. "MURDERS ON THE RISE! MURDERS ON THE RISE! IS ANYBODY SAFE? FIND OUT IN TODAY'S ISSUE OF THE DAILY LUNA!"
+{You notice a boy|The boy continues} yelling in the middle of the square, clutching a pile of newspapers. "MURDERS ON THE RISE! MURDERS ON THE RISE! IS ANYBODY SAFE? FIND OUT IN TODAY'S ISSUE OF THE DAILY LUNA!"
 
 * [Ask about the murders]
 You ask the boy about the murders he's yelling about.
@@ -223,7 +268,7 @@ The boy snarls, "I'm just doing my job, leave me be!"
 
 = _fountain
 
-You look at the fountain. It's a pretty standard fountain, with a statue of {met_scarlet: Scarlet|a pretty lady} holding a wine glass (which is where the water is coming from).
+You look at the fountain. It's a pretty standard fountain, with a statue of {met_scarlet: Scarlet|a pretty lady} holding a wine glass (which is where the water is coming from)
 
 * [Scoop some coins out of the water]
 You scoop some coins out of the water, while several people give you dirty looks. You gain £2! Handy that they use the same currency here. 
@@ -237,6 +282,10 @@ You make a wish, and throw in £1.
 
 + [Look at something else]
 -> town_square
+
+
+= dungeons_info
+->WIP
 
 
 
