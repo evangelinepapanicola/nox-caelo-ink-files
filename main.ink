@@ -327,8 +327,70 @@ Have you heard about the murders going on here?
     
     
 === ignis_arena ===
--> WIP
+"Alright, let's get going!"
+And with that, you and Parvus begin your 3 days of travelling to Ignis Arena. You travel there on horseback, stopping to rest and camp every now and then.
 
+On day 2, you're settled down by an open fire, with Cerberus snoozing in your lap. You wonder if you'll ever get to go home again.
+Parvus notices you deep in thought.
+"Thank you."
+* [For what?]
+"For helping me with all of this.
+* [Wow, about time!]
+"Yeah I know, I know, It's really overdue.
+* [Don't worry about it.]
+- <> It really means a lot to me. I was born and raised in Luna, the people are my family. I can't bear to watch any more die. But I know how big this task I ask of you is. You must be missing so much from your realm."
+
+You and Parvus chat for a while, and then rest before continuing on your journey.
+Eventually, you arrive at the huge stone walls around the entrance to Ignis Arena.
+
+"Alright, good luck!" Parvus exclaims. "I'll be waiting out here for you."
+
+You swallow every ounce of fear inside of you, and make your way into the arena entrance.
+
+The entrance is packed with loud people, swigging beer and chanting. You see a desk in the back titled "SIGN UPS" where a receptionist is sat, looking bored and picking at her nails.
+A large, athletic looking man in armour stumbles into the entrance from the arena, his face covered in bruises, a gash on his cheek and blood stains scattered over him. The people give him a small cheer as he enters, and an even taller man gives him a hard pat on the back, saying with a deep voice, "Better luck next time, lad." The bloodied man wheezes at the pat on the back.
+
+You approach the desk. The receptionist doesn't seem to notice your presence.
+
+* [Hello?]
+* [Excuse me!]
+
+- (receptionist) {!The lady looks up at you, slightly confused.}
+{!"Can I help you?"}
+
+* [Do you know where I can find the Tome of Warfare?]
+    You hear someone behind you spit-take, another person chuckles.
+    The lady looks at you, eyes wide, "Uh, excuse me? You want the Tome of Warfare? Oh little one... the only way you'll get your hands on that is by defeating the reigning arena champion. He hasn't been defeated in 50 years."
+    * * [I'll fight him.]
+        "Are you sure? You'll need a sponsor to fight."
+        * * * [I'm sure, but-]
+            You tell the lady you're sure you'll fight. Just as you start to tell her you don't have a sponsor yet, you feel a hand on your shoulder. 
+            "I'll sponsor." You look up, and a tall, muscular lady covered in scars, with a buzzcut, silver hair and dark, smudged makeup is standing by you. She gives you a mischievous grin. 
+            The receptionist sighs. "Alrighty then, your spot's at 5pm. Don't be late."
+            ->talk_with_cereza
+        
+* [I want to fight.]
+The receptionist looks you up and down. "Uh, okay, well here's the list of challengers and rewards." She hands you a crumpled up piece of paper.
+
+You spend time going through the whole list, looking for a fight with the reward being the Tome of Warfare. At the very bottom, you find "Fighter: Marg the Destroyer, Reward: The Tome of Warfare."
+
+You tell the receptionist you want to fight Marg the Destroyer.
+
+The lady looks at you, eyes wide, "Uh, excuse me? Oh little one... that's the reigning arena champion. He hasn't been defeated in 50 years."
+    * * [I'll fight him.]
+        "Are you sure? You'll need a sponsor to fight."
+        * * * [I'm sure, but-]
+            You tell the lady you're sure you'll fight. Just as you start to tell her you don't have a sponsor yet, you feel a hand on your shoulder. 
+            "I'll sponsor." You look up, and a tall, muscular lady covered in scars, with a buzzcut, silver hair and dark, smudged makeup is standing by you. She gives you a mischievous grin. 
+            The receptionist sighs. "Alrighty then, your spot's at 5pm. Don't be late."
+            ->talk_with_cereza
+            
+* [Is that guy okay?]
+"Who? Oh," She notices the bloodied man, who is now sat down at a table, tending to his wounds. "He'll be fine, little one. He had quite the fight. Not the worst I've seen."
+->receptionist
+
+= talk_with_cereza
+-> WIP
 
 === fox_house ===
 ->WIP
