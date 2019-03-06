@@ -301,7 +301,7 @@ Have you heard about the murders going on here?
     ->dungeons_info
 
 + (three_locations)[What are the three locations?]
-    {!"Ignis Arena, Fox House and the Labyrinth of Fury."}
+    {!"Ignis Arena, Fox House and the Labyrinth of Fury. All located outside of Luna."}
     + + [Tell me about the Ignis Arena.]
         "The Ignis Arena is where the Tome of Warfare is hidden. I would prepare for a fight if you're headed there."
         * * * [Head to the Ignis Arena]
@@ -390,7 +390,24 @@ The lady looks at you, eyes wide, "Uh, excuse me? Oh little one... that's the re
 ->receptionist
 
 = talk_with_cereza
--> WIP
+
+{!"Lets talk." The silver haired woman heads over to the table in the far corner of the room and sits down, indicating for you to follow.}
+
+{!You sit down, a million questions running through your head. Before you can say anything, she pipes up, "I'm Cereza, nice to meet you."}
+{!You introduce yourself. "I can tell you're a newbie, {players_name}. It's very rare that anyone would come in here to challenge Marg the Destroyer. It's suicide.}
+* [Why did you sponsor me?]
+I'm curious to see what tricks you have up your sleeve. I'm a regular in this arena. I've seen the typical type of people come and go. Bounty hunters, mercenaries, people who are simply looking for thrills. But if I'm honest, you don't seem like much of a fighter. Which means you're probably after the Tome of Warfare. Why do you need such a powerful artefact?"
+    * * [Tell her you're here to retrieve it for a friend]
+        "Wow. You must be quite a loyal friend. How much are they paying you?"
+        * * * [Nothing, actually...]
+            She looks at you, wide-eyed. "Very well then."
+            ->talk_with_cereza
+    * * [Lie]
+        You make up some story about being a tome collector.
+        "I see...", Cereza says slowly, with uncertainty. She can tell you're lying.
+        ->talk_with_cereza
+* [How do I beat this guy?]
+"Honestly, little one." She sighs. "If I knew, I'd tell you. Trust me. Not even I have defeated Marg the Destroyer. He's ruled this arena for 50 years."
 
 === fox_house ===
 ->WIP
