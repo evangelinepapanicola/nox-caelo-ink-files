@@ -407,7 +407,56 @@ I'm curious to see what tricks you have up your sleeve. I'm a regular in this ar
         "I see...", Cereza says slowly, with uncertainty. She can tell you're lying.
         ->talk_with_cereza
 * [How do I beat this guy?]
-"Honestly, little one." She sighs. "If I knew, I'd tell you. Trust me. Not even I have defeated Marg the Destroyer. He's ruled this arena for 50 years."
+"Honestly, little one." She sighs. "If I knew, I'd tell you. Trust me. Not even I have defeated Marg the Destroyer. He's ruled this arena for 50 years. But honestly, the best advice I have for you, based on your uh, weapon of choice... 
+{weaponEquipped =="bow": <> try and use high ground to your advantage, and try and stay far back from him so he can't hit you."}
+{weaponEquipped =="sword": <> try and strike his weak points with your sword, and dodge as best as you can."}
+{weaponEquipped =="fists": <> try to strike his weak points, and dodge as best as you can. You'll have to be careful he doesn't try to counter your punches and kicks."}
+
+->_fight
+
+= _fight
+"{players_name}! You're up!" You hear the announcer call your name.
+"Looks like it's your time to shine, little one." Cereza pats you hard on the back, and the two of you head into the Arena. "GOOD LUCK!" Cereza yells as she goes to take her seat, while you nervously head into the center ring.
+You hear the crowd roaring and chanting as you enter, it's almost deafening.
+"EVERYBODY PLEASE WELCOME YOUR NEW CHALLENGER! {players_name}! FROM! LUNAAAA!" The announcer yells, and the crowd roars even louder.
+
+You take some time to look around the huge arena. There are two gates, the one you came from and the one on the opposite side. On the west and east sides of the ring are high platforms. There is also a mud pit in the centre. You decide you should find a good position, before Marg appears.
+
+* (west_platform)[Climb up on to the west platform]
+You decide to it would be advantageous to use the high ground, so you climb the west platform.
+
+* (east_platform)[Climb up on to the east platform]
+You decide to it would be advantageous to use the high ground, so you climb the east platform.
+
+* (mud_pit)[Stand by the mud pit]
+You decide to stand by the mud pit.
+
+* (hide)[Hide by Marg's door]
+You hide by Marg's door, hoping to catch him by surprise.
+
+- "FIGHTING NOX TODAY, WE HAVE MARG THE DESTROYERRRR!" The announcer calls out, and everyone gasps. You start to hear people muttering and whispering to eachother.
+The opposite gate clunks open, and from the shadows you see a huge, monsterous troll appear, his stomping footsteps shaking the arena slightly. He roars, and the crowd starts to chant his name. 
+{weaponEquipped == "bow": ->bow_fight} {weaponEquipped == "sword": ->sword_fight} {weaponEquipped == "fists": ->fist_fight}
+
+= bow_fight
+The announcer calls out, "READY... FIGHT!"
+->WIP
+
+= sword_fight
+The announcer calls out, "READY... FIGHT!"
+->WIP
+
+= fist_fight
+The announcer calls out, "READY... FIGHT!"
+{hide: Marg looks confused, unable to see you in the arena. You take this as an opportunity and pre-emptively dive on top of him. He's so heavy, you don't quite manage to knock him over but you now have him grappled.}
+
+{west_platform || east_platform: You watch as Marg approaches your platform, and tries to climb up.}
+
+{mud_pit: You watch as Marg trudges through the mud pit towards you until you are face to face.}
+
+* {hide} [Cover his eyes]
+* {hide} [Hit the top of his head]
+* {west_platform || east_platform} []
 
 === fox_house ===
 ->WIP
