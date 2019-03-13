@@ -11,3 +11,4 @@ VAR weaponEquipped = ""
 VAR visibleWeapon = false
 VAR apple = false
 VAR coolSunglasses = false
+VAR fightSuccess = 0

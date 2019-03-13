@@ -454,9 +454,99 @@ The announcer calls out, "READY... FIGHT!"
 
 {mud_pit: You watch as Marg trudges through the mud pit towards you until you are face to face.}
 
-* {hide} [Cover his eyes]
-* {hide} [Hit the top of his head]
-* {west_platform || east_platform} []
++ {hide} [Cover his eyes]
+You hear as Marg roars louder than ever, absolutely fuming with anger and scrambling to try and pull you off of him. He trips over and stumbles on to the ground, before shaking you off. Marg stands up to face you.
+~fightSuccess++
+
++ {hide} [Hit the top of his head]
+As you try and bash Marg on the top of his skull, he is seemingly unfazed. You actually feel like you hurt your fist more than you hurt him. Irritated, Marg grabs your arms and throws you overhead on to the ground. You feel the pain spread through your whole body as you lie on the ground. You get up as quickly as you can.
+
++ {west_platform || east_platform} [Try and push him off the ladder]
+As he starts to climb the ladder up, you lean down and try to push him off. He grabs one of your arms with one hand and yanks you off the platform, sending you hurtling on to the ground. You feel the pain spread through your whole body as you lie there, and get up as quickly as you can.
+Marg jumps back down from the ladder and looms over you.
+
++ {west_platform || east_platform} [Wait until he reaches the top, and then kick him to try and make him fall off]
+As soon as Marg stands up on to the platform, you strongly kick him square in the stomach, causing him to stumble backwards and fall off the platform. You hear him wail as he falls and crashes to the ground. You jump down from the platform and stand tall over him, until he gets back on his feet.
+~fightSuccess++
+
++ {mud_pit} [Uppercut punch him in the jaw]
+You punch him hard underneath his jaw, causing him to stagger backwards before losing his balance and falling back into the mud pit. After a few seconds you watch him emerge from the pool of mud, wipe his face and let out a roar. You can tell he is seething with anger.
+~fightSuccess++
+
++ {mud_pit} [Roundhouse kick him in the stomach]
+With a leap you drive all of your strength into a sharp kick to Marg's stomach. Marg barely flinches, and as you move your leg back you feel a pain as though you've stubbed a toe. Marg rubs his stomach and gives an irritated roar, before pulling back one of his clenched fists and sending it hurtling toward your face. You don't dodge in time, and it collides with your face. You stumble backwards, and as you look up at Marg with a glare, you wipe the blood from your nose.
+
+- He rushes at you with full speed, yelling,
+
+    + + [Stand strong and block his attack]
+        You cross your arms in front of your face, preparing to block his attack, but he quickly notices and guts you in the stomach instead. Doubled over in pain, you wince as you try to stay on your feet.
+        
+    + + [Prepare to counter his attack]
+        As he rushes forward, you grab his fist and pull it forward, kneeing him in the stomach before sending him hurtling toward the ground.
+        {fightSuccess == 1: You can tell he's starting to look hurt, but he just barely stands back up.}
+        {fightSuccess == 0: He gets back on his feet again.}
+        ~fightSuccess++
+        
+    + + [Try to trip him up]
+        You try your hardest to stick your leg out at the last second and trip him up, but it fails. You don't quite make it on time and he lands a nasty blow to your face, giving you a black eye.
+
+    - - You try to focus, and for a minute it's almost like time stops. You look at Cereza sitting on the other side of the arena chanting with the rest of the crowd, and she gives you a wink. You try to remember the advice she gave you... as you look back at Marg you notice a nasty wound on the underside of his chin.
+    
+        The fight continues.
+        
+        + + + [Punch him in the face]
+                You swing your fist at him in desparation, but it misses.
+                
+        + + + [Kick him in the shin]
+                You try to kick him hard in the shin, but you miss and almost lose your balance.
+                
+        + + + [Elbow him under the chin]
+                Noticing his weak point, you drive your elbow up and whack the wound under his chin as hard as you can. He roars in pain, clutching his chin in agony.
+                ~fightSuccess++
+        
+        - - - You wheeze, breathing heavily as you try to regain some stamina. You feel like you're going to pass out - your sight is blurry, you're aching all over and for a moment darkness clouds your vision.
+        + + + [Resist, go for the final blow]
+                You can't give up. You won't give up. You rush toward him, yelling - 
+                {fightSuccess >= 2: Your fist hurtles toward him at you land a blow on the wound under his chin. He roars again, weakly throwing a punch in return, but you counter it and pull him onto the ground. You watch for a moment as he tries to get up one final time. He coughs and splutters for a few minutes before falling unconscious. ->fight_won}
+                {fightSuccess < 2: <> but before you can land a hit, your body gives out and you crash to the ground. You look up at Marg once more as he chuckles, before everything fades to black. ->fight_lost}
+        
+        + + + [Surrender]
+                You decide to give up on the fight, and raise both arms above your head. 
+                ->fight_lost
+        
+= fight_won
+Out of breath, you look around at the crowd as they cheer, chanting your name.
+"{players_name}! {players_name}! {players_name}! {players_name}!"
+You have won the fight.
+
+Leaning on Cereza for support, you limp back into the arena entrance. As you enter, the people raise their drinks and cheer once again. 
+
+"That was incredible, {players_name}." Cereza looks at you, excitedly. "I've never seen anything quite like it. You have to stay, continue fighting here at the arena. I'll be your coach!"
+
+* [I'm sorry, I have a mission to complete...]
+    Cereza sighs, but gives you a look of understanding. "I had a feeling you'd say that. I understand. I'm proud of you, little one. Keep in touch, yeah?"
+* [You're kidding, right? That was too easy.]
+Cereza chuckes. "Hah, the confidence of a champion. I understand you have things to do. Good luck out there little one. Don't be a stranger, okay?"
+
+- "Impressive display." You hear a deep voice interrupt. You realise you're suddenly stood in a large shadow, and you turn around to see Marg, holding some ice to his chin. You gulp.
+Marg chuckles. "Don't worry, the fight is over. Congratulations, nobody has beaten me in a long, long time. Here - I believe this is yours." He hands you a large book with a red velvet hardback cover. You look at the title etched on to it: "The Tome of Warfare."
+
+~questsItems++
+
+You say your goodbyes to Cereza and the rest of the arena folk, and make your way out to find Parvus again.
+
+Tome in hand, you journey back to Luna.
+
+->town_square
+ 
+= fight_lost
+
+{players_name} failed to obtain the Tome of Warfare. In their defeat, they were so embarrassed that they ran away, never to be seen again.
+
++ [Try again]
+~fightSuccess = 0
+{weaponEquipped == "bow": ->bow_fight} {weaponEquipped == "sword": ->sword_fight} {weaponEquipped == "fists": ->fist_fight}
+->WIP
 
 === fox_house ===
 ->WIP
