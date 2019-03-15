@@ -443,7 +443,7 @@ The announcer calls out, "READY... FIGHT!"
 ->WIP
 
 = sword_fight
-The announcer calls out, "READY... FIGHT!" //WIP: ALTERING FOR SWORDS
+The announcer calls out, "READY... FIGHT!"
 {hide: Marg looks confused, unable to see you in the arena. You take this as an opportunity and pre-emptively strike him with your sword.}
 
 {west_platform || east_platform: You watch as Marg approaches your platform, and tries to climb up.}
@@ -493,20 +493,20 @@ He rushes at you with full speed, yelling,
     
         The fight continues.
         
-        + + + [Punch him in the face]
-                You swing your fist at him in desparation, but it misses.
+        + + + [Slash towards his face]
+                You swing your sword at him in desparation, but it misses.
                 
-        + + + [Kick him in the shin]
-                You try to kick him hard in the shin, but you miss and almost lose your balance.
+        + + + [Stab him in the foot]
+                You try to stab one of his feet, but you miss and plunge the Dawnbreaker into the ground.
                 
-        + + + [Elbow him under the chin]
-                Noticing his weak point, you drive your elbow up and whack the wound under his chin as hard as you can. He roars in pain, clutching his chin in agony.
+        + + + [Slash him under the chin]
+                Noticing his weak point, you swing your sword upwards and slash the wound under his chin. He roars in pain, clutching his chin in agony.
                 ~fightSuccess++
         
         - - - You wheeze, breathing heavily as you try to regain some stamina. You feel like you're going to pass out - your sight is blurry, you're aching all over and for a moment darkness clouds your vision.
         + + + [Resist, go for the final blow]
-                You can't give up. You won't give up. You rush toward him, yelling - 
-                {fightSuccess >= 2: Your fist hurtles toward him at you land a blow on the wound under his chin. He roars again, weakly throwing a punch in return, but you counter it and pull him onto the ground. You watch for a moment as he tries to get up one final time. He coughs and splutters for a few minutes before falling unconscious. ->fight_won}
+                You can't give up. You won't give up. You rush toward him, sword in hand, yelling - 
+                {fightSuccess >= 2: You land a slash on the same wound under his chin. He roars again, weakly throwing a punch in return, but collapses on to the ground. You watch for a moment as he tries to get up one final time. He coughs and splutters for a few minutes before falling unconscious. ->fight_won}
                 {fightSuccess < 2: <> but before you can land a hit, your body gives out and you crash to the ground. You look up at Marg once more as he chuckles, before everything fades to black. ->fight_lost}
         
         + + + [Surrender]
