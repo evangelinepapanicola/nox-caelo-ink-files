@@ -440,7 +440,75 @@ The opposite gate clunks open, and from the shadows you see a huge, monsterous t
 
 = bow_fight
 The announcer calls out, "READY... FIGHT!"
-->WIP
+{hide: Marg looks confused, unable to see you in the arena. You take this as an opportunity and pre-emptively shoot an arrow at him.}
+
+{west_platform || east_platform: You watch as Marg approaches your platform, and tries to climb up.}
+
+{mud_pit: You watch as Marg trudges through the mud pit towards you until you are face to face.}
+
++ {hide} [Shoot again]
+You hear as Marg roars louder than ever, absolutely fuming with anger as he pulls the arrow out of his arm. You quickly take out another arrow and pull back the string on your bow, shooting him again in the back before he turns around.
+~fightSuccess++
+
++ {hide} [Attempt to grapple him]
+You try to grapple him, but it's harder than you thought with a bow in hand. Irritated, Marg grabs your arms and throws you overhead on to the ground. You feel the pain spread through your whole body as you lie on the ground. You get up as quickly as you can.
+
++ {west_platform || east_platform} [Shoot an arrow at one of his hands]
+As he starts to climb the ladder up, you try to aim an arrow at his right hand. It hits, and he wails in pain, removing his hand from the ladder and is forced to jump down.
+~fightSuccess++
+
++ {west_platform || east_platform} [Wait until he reaches the top, and then strike him]
+As soon as Marg stands up on to the platform, you swing your sword at him- but he catches the blade perfectly, pulling it from your hands and throwing it onto the ground beneath you. You feel frozen with fear, and before you can process what is happening, Marg slams his fist into your face, sending you flying off the platform and crashing into the ground. You feel the pain spread through your whole body as you lie there, and get up as quickly as you can.
+Marg jumps back down from the ladder and looms over you.
+~weaponEquipped=""
+
++ {mud_pit} [Swing your sword up toward his face]
+You swing your sword at his face and he dodges, causing him to stagger backwards before losing his balance and falling back into the mud pit. After a few seconds you watch him emerge from the pool of mud, wipe his face and let out a roar. You can tell he is seething with anger.
+~fightSuccess++
+
++ {mud_pit} [Swing your sword at his feet]
+You swing your sword at Marg's feet and he easily jumps to dodge it. He gives an irritated roar, before pulling back one of his clenched fists and sending it hurtling toward your face. You don't dodge in time, and it collides with your face. You stumble backwards, and as you look up at Marg with a glare, you wipe the blood from your nose.
+
+- {weaponEquipped=="":You run and scramble to retrieve the Dawnbreaker from the dirt.} 
+~weaponEquipped="sword"
+He rushes at you with full speed, yelling,
+
+    + + [Stand strong and block his attack]
+        You hold the flat edge of your sword in front of your face, preparing to block his attack, but he quickly notices and guts you in the stomach instead. Doubled over in pain, you wince as you try to stay on your feet.
+        
+    + + [Prepare to counter his attack]
+        As he rushes forward, you diagonally slash downward and leave a gash on his arm. He roars with pain.
+        {fightSuccess == 1: You can tell he's starting to look hurt, but he still continues to fight.}
+        {fightSuccess == 0: He shakes it off, and prepares for the next attack.}
+        ~fightSuccess++
+        
+    + + [Strike forward]
+        You try your hardest to strike your sword forward into his stomach, but he just narrowly dodges. You don't quite make it on time and he lands a nasty blow to your face, giving you a black eye.
+
+    - - You try to focus, and for a minute it's almost like time stops. You look at Cereza sitting on the other side of the arena chanting with the rest of the crowd, and she gives you a wink. You try to remember the advice she gave you... as you look back at Marg you notice a nasty wound on the underside of his chin.
+    
+        The fight continues.
+        
+        + + + [Slash towards his face]
+                You swing your sword at him in desparation, but it misses.
+                
+        + + + [Stab him in the foot]
+                You try to stab one of his feet, but you miss and plunge the Dawnbreaker into the ground.
+                
+        + + + [Slash him under the chin]
+                Noticing his weak point, you swing your sword upwards and slash the wound under his chin. He roars in pain, clutching his chin in agony.
+                ~fightSuccess++
+        
+        - - - You wheeze, breathing heavily as you try to regain some stamina. You feel like you're going to pass out - your sight is blurry, you're aching all over and for a moment darkness clouds your vision.
+        + + + [Resist, go for the final blow]
+                You can't give up. You won't give up. You rush toward him, sword in hand, yelling - 
+                {fightSuccess >= 2: You land a slash on the same wound under his chin. He roars again, weakly throwing a punch in return, but collapses on to the ground. You watch for a moment as he tries to get up one final time. He coughs and splutters for a few minutes before falling unconscious. ->fight_won}
+                {fightSuccess < 2: <> but before you can land a hit, your body gives out and you crash to the ground. You look up at Marg once more as he chuckles, before everything fades to black. ->fight_lost}
+        
+        + + + [Surrender]
+                You decide to give up on the fight, and raise both arms above your head. 
+                ->fight_lost
+
 
 = sword_fight
 The announcer calls out, "READY... FIGHT!"
