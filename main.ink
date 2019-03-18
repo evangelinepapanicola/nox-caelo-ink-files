@@ -457,21 +457,18 @@ You try to grapple him, but it's harder than you thought with a bow in hand. Irr
 As he starts to climb the ladder up, you try to aim an arrow at his right hand. It hits, and he wails in pain, removing his hand from the ladder and is forced to jump down.
 ~fightSuccess++
 
-+ {west_platform || east_platform} [Wait until he reaches the top, and then strike him]
-As soon as Marg stands up on to the platform, you swing your sword at him- but he catches the blade perfectly, pulling it from your hands and throwing it onto the ground beneath you. You feel frozen with fear, and before you can process what is happening, Marg slams his fist into your face, sending you flying off the platform and crashing into the ground. You feel the pain spread through your whole body as you lie there, and get up as quickly as you can.
++ {west_platform || east_platform} [Wait until he reaches the top, and then shoot an arrow in his face]
+As soon as Marg stands up on to the platform, you shoot an arrow at him- but he catches the arrow perfectly, throwing it onto the ground beneath you. You feel frozen with fear, and before you can process what is happening, Marg slams his fist into your face, sending you flying off the platform and crashing into the ground. You feel the pain spread through your whole body as you lie there, and get up as quickly as you can.
 Marg jumps back down from the ladder and looms over you.
-~weaponEquipped=""
 
-+ {mud_pit} [Swing your sword up toward his face]
-You swing your sword at his face and he dodges, causing him to stagger backwards before losing his balance and falling back into the mud pit. After a few seconds you watch him emerge from the pool of mud, wipe his face and let out a roar. You can tell he is seething with anger.
++ {mud_pit} [Shoot an arrow at his foot]
+You shoot an arrow at his foot and he starts hopping on the other foot, clutching his now wounded foot in pain. He staggers backwards before losing his balance and falling back into the mud pit. After a few seconds you watch him emerge from the pool of mud, wipe his face and let out a roar. You can tell he is seething with anger.
 ~fightSuccess++
 
-+ {mud_pit} [Swing your sword at his feet]
-You swing your sword at Marg's feet and he easily jumps to dodge it. He gives an irritated roar, before pulling back one of his clenched fists and sending it hurtling toward your face. You don't dodge in time, and it collides with your face. You stumble backwards, and as you look up at Marg with a glare, you wipe the blood from your nose.
++ {mud_pit} [Shoot an arrow at his face]
+You shoot an arrow at his face- but he catches the arrow perfectly, throwing it into the mud pit. He gives an irritated roar, before pulling back one of his clenched fists and sending it hurtling toward your face. You don't dodge in time, and it collides with your face. You stumble backwards, and as you look up at Marg with a glare, you wipe the blood from your nose.
 
-- {weaponEquipped=="":You run and scramble to retrieve the Dawnbreaker from the dirt.} 
-~weaponEquipped="sword"
-He rushes at you with full speed, yelling,
+- He rushes at you with full speed, yelling,
 
     + + [Stand strong and block his attack]
         You hold the flat edge of your sword in front of your face, preparing to block his attack, but he quickly notices and guts you in the stomach instead. Doubled over in pain, you wince as you try to stay on your feet.
