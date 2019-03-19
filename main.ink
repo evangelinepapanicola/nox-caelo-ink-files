@@ -455,6 +455,7 @@ You try to grapple him, but it's harder than you thought with a bow in hand. Irr
 
 + {west_platform || east_platform} [Shoot an arrow at one of his hands]
 As he starts to climb the ladder up, you try to aim an arrow at his right hand. It hits, and he wails in pain, removing his hand from the ladder and is forced to jump down.
+~highGround = true
 ~fightSuccess++
 
 + {west_platform || east_platform} [Wait until he reaches the top, and then shoot an arrow in his face]
@@ -470,19 +471,16 @@ You shoot an arrow at his face- but he catches the arrow perfectly, throwing it 
 
 - He rushes at you with full speed, yelling,
 
-    + + [Stand strong and block his attack]
-        You hold the flat edge of your sword in front of your face, preparing to block his attack, but he quickly notices and guts you in the stomach instead. Doubled over in pain, you wince as you try to stay on your feet.
+    + + [Shoot an arrow directly at him]
+        You try to predict his movements and land an arrow on him, but he dodges past and gets up close to you.
         
-    + + [Prepare to counter his attack]
-        As he rushes forward, you diagonally slash downward and leave a gash on his arm. He roars with pain.
-        {fightSuccess == 1: You can tell he's starting to look hurt, but he still continues to fight.}
+    + + [Dodge at the last second]
+        As he rushes forward, closing the distance between you- you dodge his fist at the last second.
+        {fightSuccess == 1: You can tell he's starting to look tired, but he still continues to fight.}
         {fightSuccess == 0: He shakes it off, and prepares for the next attack.}
         ~fightSuccess++
-        
-    + + [Strike forward]
-        You try your hardest to strike your sword forward into his stomach, but he just narrowly dodges. You don't quite make it on time and he lands a nasty blow to your face, giving you a black eye.
 
-    - - You try to focus, and for a minute it's almost like time stops. You look at Cereza sitting on the other side of the arena chanting with the rest of the crowd, and she gives you a wink. You try to remember the advice she gave you... as you look back at Marg you notice a nasty wound on the underside of his chin.
+    - - You try to focus, and for a minute it's almost like time stops. You look at Cereza sitting on the other side of the arena chanting with the rest of the crowd, and she gives you a wink. {highGround == false: You try to remember the advice she gave you... as you look back at Marg you notice a nasty wound on the underside of his chin.}
     
         The fight continues.
         
