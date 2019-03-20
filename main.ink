@@ -58,7 +58,8 @@ You find yourself in the town square. {!People are roaming about, coming in and 
 
 + [Town gates]
 
--> town_gates
+{questsItems == 0: ->town_gates}
+{questsItems > 0: -> dungeons_info}
 
 = town_gates
 
@@ -240,7 +241,9 @@ You thank the old man for his help and leave the alleyway.
  
  
 = _alley
-->WIP
+
+Sorry, I haven't written this area yet. I'll send you back to the town square!
+-> town_square
 
 = _paperboy
 
@@ -285,6 +288,9 @@ You make a wish, and throw in £1.
 
 
 = dungeons_info
+
+{questsItems == 3: -> final_battle_info}
+
 {!"Anyway, it looks like we're ready to get going!" Parvus says excitedly.}
 {!"So here's what you need to do. There are three legendary tomes that we can use to defeat Scarlet. The problem is, they're all hidden in 3 separate locations. I need you to go out there and retrieve them."}
 
@@ -302,14 +308,14 @@ Have you heard about the murders going on here?
 
 + (three_locations)[What are the three locations?]
     {!"Ignis Arena, Fox House and the Labyrinth of Fury. All located outside of Luna."}
-    + + [Tell me about the Ignis Arena.]
+    + + {not ignis_arena}[Tell me about the Ignis Arena.]
         "The Ignis Arena is where the Tome of Warfare is hidden. I would prepare for a fight if you're headed there."
         * * * [Head to the Ignis Arena]
                 -> ignis_arena
         + + + [Tell me about the other places]
                 ->three_locations
                 
-    + + [What's Fox House like?]
+    + + {not fox_house}[What's Fox House like?]
     "Fox House is, despite the name, not a house full of cute fuzzy foxes." Parvus says, in a disapointed tone.
     "Fox House is where you'll find Lady Emeralda, who is closely guarding the Tome of Charisma. It'll take a lot of convincing for her to hand it over."
         * * * [Head to Fox House]
@@ -317,12 +323,18 @@ Have you heard about the murders going on here?
         + + + [Tell me about the other places]
                 ->three_locations
     
-    + + [The Labyrinth of Fury, huh?]
+    + + {not labyrinth_of_fury}[The Labyrinth of Fury, huh?]
     "The Labyrinth of Fury is, well, a huge maze. At the heart of it is the Tome of Perserverance. You'll need plenty of patience for this one."
         * * * [Head to the Labyrinth of Fury]
                 -> labyrinth_of_fury
         + + + [Tell me about the other places]
                 ->three_locations
+                
+    + + {questsItems > 0}[Go back to the town square]
+        ->town_square
+                
++ {questsItems > 0}[Go back to the town square]
+->town_square
     
     
     
@@ -472,33 +484,34 @@ You shoot an arrow at his face- but he catches the arrow perfectly, throwing it 
 - He rushes at you with full speed, yelling,
 
     + + [Shoot an arrow directly at him]
-        You try to predict his movements and land an arrow on him, but he dodges past and gets up close to you.
+        You try to predict his movements and land an arrow on him, but he dodges past and {highGround == true: rushes up the ladder. You find yourself face to face with him. |gets up close to you.}
         
     + + [Dodge at the last second]
-        As he rushes forward, closing the distance between you- you dodge his fist at the last second.
+        {highGround == false: As he rushes forward, closing the distance between you- you dodge his fist at the last second.}
+        {highGround == true: As he rushes forward, darting up the ladder and on to the platform, he swings his fist toward you and you dodge at the very last second.}
         {fightSuccess == 1: You can tell he's starting to look tired, but he still continues to fight.}
         {fightSuccess == 0: He shakes it off, and prepares for the next attack.}
         ~fightSuccess++
 
-    - - You try to focus, and for a minute it's almost like time stops. You look at Cereza sitting on the other side of the arena chanting with the rest of the crowd, and she gives you a wink. {highGround == false: You try to remember the advice she gave you... as you look back at Marg you notice a nasty wound on the underside of his chin.}
+    - - You try to focus, and for a minute it's almost like time stops. You look at Cereza sitting on the other side of the arena chanting with the rest of the crowd, and she gives you a wink. {highGround == false: You try to remember the advice she gave you... and climb back on to the nearest high platform to give yourself a clearer shot.}
     
         The fight continues.
         
-        + + + [Slash towards his face]
-                You swing your sword at him in desparation, but it misses.
+        + + + [Aim for his face]
+                You shoot an arrow at him in desparation, but it misses.
                 
-        + + + [Stab him in the foot]
-                You try to stab one of his feet, but you miss and plunge the Dawnbreaker into the ground.
+        + + + [Aim for his feet]
+                You try to hit one of his feet, but you miss and send an arrow into the ground.
                 
-        + + + [Slash him under the chin]
-                Noticing his weak point, you swing your sword upwards and slash the wound under his chin. He roars in pain, clutching his chin in agony.
+        + + + [Aim under the chin]
+                Noticing a wound under his chin, you send an arrow flying toward it. It hits - he roars in pain, clutching his chin in agony.
                 ~fightSuccess++
         
         - - - You wheeze, breathing heavily as you try to regain some stamina. You feel like you're going to pass out - your sight is blurry, you're aching all over and for a moment darkness clouds your vision.
         + + + [Resist, go for the final blow]
-                You can't give up. You won't give up. You rush toward him, sword in hand, yelling - 
-                {fightSuccess >= 2: You land a slash on the same wound under his chin. He roars again, weakly throwing a punch in return, but collapses on to the ground. You watch for a moment as he tries to get up one final time. He coughs and splutters for a few minutes before falling unconscious. ->fight_won}
-                {fightSuccess < 2: <> but before you can land a hit, your body gives out and you crash to the ground. You look up at Marg once more as he chuckles, before everything fades to black. ->fight_lost}
+                You can't give up. You won't give up. You leap from the platform, bow in hand, yelling - 
+                {fightSuccess >= 2: You pull back the bowstring and send a mid air shot hurtling toward the same wound under his chin. It hits, and he roars again, weakly throwing a punch in return, but collapses on to the ground. You watch for a moment as he tries to get up one final time. He coughs and splutters for a few minutes before falling unconscious. ->fight_won}
+                {fightSuccess < 2: <> but before you can even shoot, your body gives out and you crash to the ground. You look up at Marg once more as he chuckles, before everything fades to black. ->fight_lost}
         
         + + + [Surrender]
                 You decide to give up on the fight, and raise both arms above your head. 
@@ -676,20 +689,35 @@ Tome in hand, you journey back to Luna.
 + [Try again]
 ~fightSuccess = 0
 {weaponEquipped == "bow": ->bow_fight} {weaponEquipped == "sword": ->sword_fight} {weaponEquipped == "fists": ->fist_fight}
-->WIP
 
 === fox_house ===
-->WIP
+This is where Fox House would be, but I haven't written it yet. Sorry! Here's the quest item anyway.
+
+~questsItems++
+
+* [Pretend you did the quest and go back]
+->town_square
 
 === labyrinth_of_fury ===
-->WIP
+This is where the Labyrinth of Fury would be, but I haven't written it yet. Sorry! Here's the quest item anyway.
 
-//WIP SECTION INDICATOR
-=== WIP ===
-Whoops! I haven't made this area yet. Please check back later. - DEV
-->END
+~questsItems++
+
+* [Pretend you did the quest and go back]
+->town_square
 
 //TEMPORARY
 === met_scarlet ===
 
 ->END
+
+=== final_battle_info ===
+
+Are you ready for the final battle?
+
++ [Yes]
+-> final_battle
+
++ [No]
+Come back when you're ready.
+-> town_square
