@@ -446,7 +446,7 @@ You decide to stand by the mud pit.
 * (hide)[Hide by Marg's door]
 You hide by Marg's door, hoping to catch him by surprise.
 
-- "FIGHTING NOX TODAY, WE HAVE MARG THE DESTROYERRRR!" The announcer calls out, and everyone gasps. You start to hear people muttering and whispering to eachother.
+- "FIGHTING {players_name} TODAY, WE HAVE MARG THE DESTROYERRRR!" The announcer calls out, and everyone gasps. You start to hear people muttering and whispering to eachother.
 The opposite gate clunks open, and from the shadows you see a huge, monsterous troll appear, his stomping footsteps shaking the arena slightly. He roars, and the crowd starts to chant his name. 
 {weaponEquipped == "bow": ->bow_fight} {weaponEquipped == "sword": ->sword_fight} {weaponEquipped == "fists": ->fist_fight}
 
