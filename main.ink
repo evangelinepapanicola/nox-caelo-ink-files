@@ -538,7 +538,6 @@ You try to grapple him, but it's harder than you thought with sword in hand. Irr
 + {west_platform || east_platform} [Swipe his hands with your sword]
 As he starts to climb the ladder up, you try to swipe at his hands with your sword. You slash one of his hands and Marg roars in pain as he removes his wounded hand from the ladder, causing him to lose balance and crash into the ground. You jump down from the platform and stand tall over him, until he gets back on his feet.
 ~fightSuccess++
-
 + {west_platform || east_platform} [Wait until he reaches the top, and then strike him]
 As soon as Marg stands up on to the platform, you swing your sword at him- but he catches the blade perfectly, pulling it from your hands and throwing it onto the ground beneath you. You feel frozen with fear, and before you can process what is happening, Marg slams his fist into your face, sending you flying off the platform and crashing into the ground. You feel the pain spread through your whole body as you lie there, and get up as quickly as you can.
 Marg jumps back down from the ladder and looms over you.
@@ -552,8 +551,8 @@ You swing your sword at his face and he dodges, causing him to stagger backwards
 You swing your sword at Marg's feet and he easily jumps to dodge it. He gives an irritated roar, before pulling back one of his clenched fists and sending it hurtling toward your face. You don't dodge in time, and it collides with your face. You stumble backwards, and as you look up at Marg with a glare, you wipe the blood from your nose.
 
 - {weaponEquipped=="":You run and scramble to retrieve the Dawnbreaker from the dirt.} 
-~weaponEquipped="sword"
-He rushes at you with full speed, yelling,
+~weaponEquipped="sword" 
+<> He rushes at you with full speed, yelling,
 
     + + [Stand strong and block his attack]
         You hold the flat edge of your sword in front of your face, preparing to block his attack, but he quickly notices and guts you in the stomach instead. Doubled over in pain, you wince as you try to stay on your feet.
