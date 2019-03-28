@@ -1,3 +1,8 @@
+Welcome to Nox Caelo.
+* [Enter]
+->_begin
+
+=== _begin ===
 It's a quiet, uneventful night at home, as usual.
 You are {players_name} - and right now, you're watching TV after a long day of chores.
 

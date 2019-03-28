@@ -130,8 +130,9 @@ A jolly lady greets you as you enter. "Welcome love! Take a look at the wares I'
     + {not coolSunglasses} [Look at the Cool Sunglasses]
         "An eye for taste I see!" The lady pipes up. "These sunglasses will have ye looking powerful. I doubt anyone'll mess with ye while wearing these! Would you like to buy 'em? They're a steal at £1"
         {not get_weapon: You realise you probably shouldn't waste money on sunglasses right now.}
+        {get_weapon && money < 1: You realise you don't actually have any money.}
         
-        + + {get_weapon}[Yes please!]
+        + + {get_weapon && money >= 1}[Yes please!]
             "A wise purchase!"
             You put on the Cool Sunglasses. You've never looked so badass!
             ~money--
@@ -145,8 +146,9 @@ A jolly lady greets you as you enter. "Welcome love! Take a look at the wares I'
     + {not apple} [Look at the Apples]
         "Ah yes! These apples are so tasty they've been selling out fast. We only have one left! Buy it for just £1."
         {not get_weapon: You realise you probably shouldn't waste money on apples right now, even if you are peckish.}
+        {get_weapon && money < 1: You realise you don't actually have any money.}
         
-        + + {get_weapon}[Yes please!]
+        + + {get_weapon && money >= 1}[Yes please!]
             "A wise purchase!"
             You buy the apple, putting it in your backpack for later.
             ~money--
